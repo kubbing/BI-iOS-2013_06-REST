@@ -56,6 +56,9 @@
     
     if (feed.image) {
         [[HTTPManager sharedManager] POST:@"feeds" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            /*
+             tohle si nekde zapiste, bude se vam to hodit :D
+             */
             [formData appendPartWithFormData:[feed.name dataUsingEncoding:NSUTF8StringEncoding]
                                         name:@"feed[author]"];
             [formData appendPartWithFormData:[feed.message dataUsingEncoding:NSUTF8StringEncoding]
