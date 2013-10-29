@@ -1,0 +1,3 @@
+[submodule "HPT_Common"]
+	path = HPT_Common
+	url = https://github.com/kubbing/HPT_Common.git

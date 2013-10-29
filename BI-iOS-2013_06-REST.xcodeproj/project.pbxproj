@@ -19,6 +19,12 @@
 		1794C87618201BBC00A226B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85E18201BBC00A226B7 /* UIKit.framework */; };
 		1794C87E18201BBC00A226B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1794C87C18201BBC00A226B7 /* InfoPlist.strings */; };
 		1794C88018201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C87F18201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m */; };
+		1794C88C1820243200A226B7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C88B1820243200A226B7 /* MainViewController.m */; };
+		1794C88F182024E200A226B7 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C88E182024E200A226B7 /* Feed.m */; };
+		1794C8921820255800A226B7 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C8911820255800A226B7 /* APIWrapper.m */; };
+		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
+		1794C89818202D8200A226B7 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89718202D8200A226B7 /* FeedCell.m */; };
+		D788662354F1410B9D968855 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E128277C40444272944E9310 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,19 @@
 		1794C87B18201BBC00A226B7 /* BI-iOS-2013_06-RESTTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BI-iOS-2013_06-RESTTests-Info.plist"; sourceTree = "<group>"; };
 		1794C87D18201BBC00A226B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1794C87F18201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BI_iOS_2013_06_RESTTests.m; sourceTree = "<group>"; };
+		1794C8891820226800A226B7 /* HPTCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPTCommon.h; sourceTree = "<group>"; };
+		1794C88A1820243200A226B7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1794C88B1820243200A226B7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1794C88D182024E200A226B7 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		1794C88E182024E200A226B7 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		1794C8901820255800A226B7 /* APIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIWrapper.h; sourceTree = "<group>"; };
+		1794C8911820255800A226B7 /* APIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIWrapper.m; sourceTree = "<group>"; };
+		1794C893182028D300A226B7 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPManager.h; path = ../HTTPManager.h; sourceTree = "<group>"; };
+		1794C894182028D300A226B7 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = ../HTTPManager.m; sourceTree = "<group>"; };
+		1794C89618202D8200A226B7 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		1794C89718202D8200A226B7 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		2D9922B3195444D88E529C28 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E128277C40444272944E9310 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,7 @@
 				1794C85D18201BBC00A226B7 /* CoreGraphics.framework in Frameworks */,
 				1794C85F18201BBC00A226B7 /* UIKit.framework in Frameworks */,
 				1794C85B18201BBC00A226B7 /* Foundation.framework in Frameworks */,
+				D788662354F1410B9D968855 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +101,7 @@
 				1794C87918201BBC00A226B7 /* BI-iOS-2013_06-RESTTests */,
 				1794C85918201BBC00A226B7 /* Frameworks */,
 				1794C85818201BBC00A226B7 /* Products */,
+				2D9922B3195444D88E529C28 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +121,7 @@
 				1794C85C18201BBC00A226B7 /* CoreGraphics.framework */,
 				1794C85E18201BBC00A226B7 /* UIKit.framework */,
 				1794C87318201BBC00A226B7 /* XCTest.framework */,
+				E128277C40444272944E9310 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,10 +129,20 @@
 		1794C86018201BBC00A226B7 /* BI-iOS-2013_06-REST */ = {
 			isa = PBXGroup;
 			children = (
+				1794C893182028D300A226B7 /* HTTPManager.h */,
+				1794C894182028D300A226B7 /* HTTPManager.m */,
 				1794C86918201BBC00A226B7 /* AppDelegate.h */,
 				1794C86A18201BBC00A226B7 /* AppDelegate.m */,
 				1794C86C18201BBC00A226B7 /* Images.xcassets */,
 				1794C86118201BBC00A226B7 /* Supporting Files */,
+				1794C88A1820243200A226B7 /* MainViewController.h */,
+				1794C88B1820243200A226B7 /* MainViewController.m */,
+				1794C88D182024E200A226B7 /* Feed.h */,
+				1794C88E182024E200A226B7 /* Feed.m */,
+				1794C8901820255800A226B7 /* APIWrapper.h */,
+				1794C8911820255800A226B7 /* APIWrapper.m */,
+				1794C89618202D8200A226B7 /* FeedCell.h */,
+				1794C89718202D8200A226B7 /* FeedCell.m */,
 			);
 			path = "BI-iOS-2013_06-REST";
 			sourceTree = "<group>";
@@ -118,6 +150,7 @@
 		1794C86118201BBC00A226B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1794C8891820226800A226B7 /* HPTCommon.h */,
 				1794C86218201BBC00A226B7 /* BI-iOS-2013_06-REST-Info.plist */,
 				1794C86318201BBC00A226B7 /* InfoPlist.strings */,
 				1794C86618201BBC00A226B7 /* main.m */,
@@ -151,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1794C88318201BBC00A226B7 /* Build configuration list for PBXNativeTarget "BI-iOS-2013_06-REST" */;
 			buildPhases = (
+				2E7A40F7351240F9B74FBE7A /* Check Pods Manifest.lock */,
 				1794C85318201BBC00A226B7 /* Sources */,
 				1794C85418201BBC00A226B7 /* Frameworks */,
 				1794C85518201BBC00A226B7 /* Resources */,
+				D25379523E474FAF85E7ECDB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,13 +269,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E7A40F7351240F9B74FBE7A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D25379523E474FAF85E7ECDB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1794C85318201BBC00A226B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1794C86B18201BBC00A226B7 /* AppDelegate.m in Sources */,
+				1794C88F182024E200A226B7 /* Feed.m in Sources */,
+				1794C89818202D8200A226B7 /* FeedCell.m in Sources */,
+				1794C88C1820243200A226B7 /* MainViewController.m in Sources */,
+				1794C895182028D300A226B7 /* HTTPManager.m in Sources */,
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
+				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +429,7 @@
 		};
 		1794C88418201BBC00A226B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D9922B3195444D88E529C28 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -369,6 +443,7 @@
 		};
 		1794C88518201BBC00A226B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D9922B3195444D88E529C28 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -441,6 +516,7 @@
 				1794C88518201BBC00A226B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1794C88618201BBC00A226B7 /* Build configuration list for PBXNativeTarget "BI-iOS-2013_06-RESTTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +525,7 @@
 				1794C88818201BBC00A226B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
