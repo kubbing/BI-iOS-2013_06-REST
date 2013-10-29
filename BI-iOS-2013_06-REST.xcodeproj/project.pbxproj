@@ -24,6 +24,7 @@
 		1794C8921820255800A226B7 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C8911820255800A226B7 /* APIWrapper.m */; };
 		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
 		1794C89818202D8200A226B7 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89718202D8200A226B7 /* FeedCell.m */; };
+		1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89A1820652800A226B7 /* UIImage+roundImage.m */; };
 		D788662354F1410B9D968855 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E128277C40444272944E9310 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		1794C894182028D300A226B7 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = ../HTTPManager.m; sourceTree = "<group>"; };
 		1794C89618202D8200A226B7 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
 		1794C89718202D8200A226B7 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		1794C8991820652800A226B7 /* UIImage+roundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+roundImage.h"; sourceTree = "<group>"; };
+		1794C89A1820652800A226B7 /* UIImage+roundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+roundImage.m"; sourceTree = "<group>"; };
 		2D9922B3195444D88E529C28 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E128277C40444272944E9310 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 				1794C8911820255800A226B7 /* APIWrapper.m */,
 				1794C89618202D8200A226B7 /* FeedCell.h */,
 				1794C89718202D8200A226B7 /* FeedCell.m */,
+				1794C8991820652800A226B7 /* UIImage+roundImage.h */,
+				1794C89A1820652800A226B7 /* UIImage+roundImage.m */,
 			);
 			path = "BI-iOS-2013_06-REST";
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				1794C88C1820243200A226B7 /* MainViewController.m in Sources */,
 				1794C895182028D300A226B7 /* HTTPManager.m in Sources */,
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
+				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +443,7 @@
 				GCC_PREFIX_HEADER = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Prefix.pch";
 				INFOPLIST_FILE = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -451,6 +458,7 @@
 				GCC_PREFIX_HEADER = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Prefix.pch";
 				INFOPLIST_FILE = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

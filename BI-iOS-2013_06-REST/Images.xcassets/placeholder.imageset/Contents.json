@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "rGrillottLoversField3_650 copy.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "rGrillottiPinkHalfshirt_646.png"
+      "scale" : "2x"
     }
   ],
   "info" : {

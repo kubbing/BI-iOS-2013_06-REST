@@ -35,7 +35,7 @@
     self.title = @"Restofka";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonAction:)];
     
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[FeedCell class] forCellReuseIdentifier:@"Cell"];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -54,6 +54,7 @@
 
 - (void)addButtonAction:(id)sender
 {
+    NSAssert(false, @"lol fail & lame");
     Feed *feed = [[Feed alloc] init];
     feed.name = @"jakub hladi";
     feed.message = [[NSDate date] description];
@@ -94,7 +95,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 88;
+    return 96;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

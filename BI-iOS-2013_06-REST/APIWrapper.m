@@ -14,7 +14,6 @@
 
 + (void)feedsSuccess:(void (^)(NSArray *))success failure:(void (^)())failure
 {
-    TRC_ENTRY;
     NSParameterAssert(success);
     NSParameterAssert(failure);
     
@@ -87,7 +86,7 @@
     [[HTTPManager sharedManager] getImageAtPath:path
                                      parameters:nil
                                         process:^UIImage *(UIImage *image) {
-                                            return image;
+                                            return [image roundImage];
                                         } success:^(NSHTTPURLResponse *response, id responseObject) {
                                             success(responseObject);
                                         } failure:^(NSError *error) {

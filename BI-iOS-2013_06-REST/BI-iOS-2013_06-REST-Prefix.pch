@@ -16,3 +16,6 @@
 #endif
 
 #import "HPTCommon.h"
+#import "UIImage+roundImage.h"
+
+#define kBaseURLString @"http://restofka.hippotaps.com"

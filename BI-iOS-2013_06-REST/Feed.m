@@ -16,7 +16,10 @@
         return nil;
     }
     else {
-        return [NSString stringWithFormat:@"%@%@", @"http://localhost:3000", _imageThumbnailPath];
+        /*
+         TODO: vysledna URL by se mela konstruovat jinde nez tady
+         */
+        return [NSString stringWithFormat:@"%@%@", kBaseURLString, _imageThumbnailPath];
     }
 }
 
@@ -26,7 +29,7 @@
     if (self) {
         self.name = object[@"author"];
         self.message = object[@"message"];
-        self.imageThumbnailPath = object[@"image"][@"image"][@"thumb"][@"url"];
+        self.imageThumbnailPath = object[@"image"][@"image"][@"thumb_retina"][@"url"];
     }
     return self;
 }

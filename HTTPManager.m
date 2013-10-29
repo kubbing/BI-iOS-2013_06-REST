@@ -13,8 +13,25 @@
     AFHTTPSessionManager *_imageManager;
 }
 
+/*
+ pri prvnim zavolani to vytvori GCD frontu ktera zpracovava tasky na pozadi
+ */
+- (dispatch_queue_t)backgroundCompletionQueue
+{
+    static dispatch_queue_t _bg_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _bg_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    });
+    
+    return _bg_queue;
+}
+
 + (instancetype)sharedManager
 {
+    /*
+     zakomentovany kod dela to same jako to makro
+     */
 //    static HTTPManager *_sharedInstance;
 //    static dispatch_once_t onceToken;
 //    dispatch_once(&onceToken, ^{
@@ -23,8 +40,7 @@
 //    return _sharedInstance;
     
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-//        NSURL *url = [NSURL URLWithString:@"http://restofka.hippotaps.com"];
-        NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
+        NSURL *url = [NSURL URLWithString:kBaseURLString];
         return [[self alloc] initWithBaseURL:url];
     });
 }
@@ -34,11 +50,17 @@
     self = [super initWithBaseURL:url];
     if (self) {
         ;
+        /*
+         druhy sessionManader ktery umi deserializovat obrazky
+         */
         NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
         _imageManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
         _imageManager.requestSerializer = [AFHTTPRequestSerializer serializer];
         _imageManager.responseSerializer = [AFImageResponseSerializer serializer];
-//        _imageManager setco
+        /*
+         callbacky budou bezet na pozadi ve fronte
+         */
+        [_imageManager setCompletionQueue:[self backgroundCompletionQueue]];
     }
     return self;
 }
@@ -110,8 +132,10 @@ constructingBodyWithBlock:block
                                                               if (error) {
                                                                   failure(error);
                                                               } else {
+                                                                  NSAssert(![NSThread currentThread].isMainThread, @"this must be executed on background thread");
                                                                   UIImage *image = process(responseObject);
                                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                                      NSAssert([NSThread currentThread].isMainThread, @"this must be executed on main thread");
                                                                       success((NSHTTPURLResponse *)task.response, image);
                                                                   });
                                                               }
