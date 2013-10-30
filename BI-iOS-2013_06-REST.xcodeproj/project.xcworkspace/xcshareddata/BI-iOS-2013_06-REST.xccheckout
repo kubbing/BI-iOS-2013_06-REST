@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2579177B-50A6-45CC-A0E3-AEC62CEDDDEE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BI-iOS-2013_06-REST</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BBDF3BEA-5F48-4AAC-BEB5-55A2097DCA88</key>
+		<string>ssh://github.com/kubbing/BI-iOS-2013_06-REST.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BI-iOS-2013_06-REST.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BBDF3BEA-5F48-4AAC-BEB5-55A2097DCA88</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/kubbing/BI-iOS-2013_06-REST.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BBDF3BEA-5F48-4AAC-BEB5-55A2097DCA88</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BBDF3BEA-5F48-4AAC-BEB5-55A2097DCA88</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BI-iOS-2013_06-REST</string>
+		</dict>
+	</array>
+</dict>
+</plist>
