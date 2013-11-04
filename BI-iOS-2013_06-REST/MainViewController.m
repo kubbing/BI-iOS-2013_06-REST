@@ -101,16 +101,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     Feed *feed = self.dataArray[indexPath.row];
-    cell.textLabel.text = feed.name;
-    cell.detailTextLabel.text = feed.message;
+    cell.nameLabel.text = feed.name;
+    cell.messageLabel.text = feed.message;
     
-    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+    cell.thumbView.image = [UIImage imageNamed:@"placeholder"];
     if (feed.imageThumbnailPath) {
         [APIWrapper feedThumbnailAtPath:feed.imageThumbnailPath Success:^(UIImage *image) {
-            cell.imageView.image = image;
+            cell.thumbView.image = image;
         } failure:^{
             ;
         }];

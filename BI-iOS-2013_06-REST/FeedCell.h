@@ -10,4 +10,8 @@
 
 @interface FeedCell : UITableViewCell
 
+@property (weak, nonatomic) UILabel *nameLabel;
+@property (weak, nonatomic) UILabel *messageLabel;
+@property (weak, nonatomic) UIImageView *thumbView;
+
 @end
