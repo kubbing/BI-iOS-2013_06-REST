@@ -105,7 +105,7 @@
     
     Feed *feed = self.dataArray[indexPath.row];
     cell.nameLabel.text = feed.name;
-    cell.detailTextLabel.text = feed.message;
+    cell.messageLabel.text = feed.message;
     
     cell.thumbView.image = [UIImage imageNamed:@"placeholder"];
     if (feed.imageThumbnailPath) {
