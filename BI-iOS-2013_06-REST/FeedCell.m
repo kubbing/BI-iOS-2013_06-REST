@@ -19,19 +19,59 @@
         thumbView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.contentView addSubview:thumbView];
         {
-            [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[thumbView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(thumbView)]];
+            [self.contentView addConstraint:[
+                                             NSLayoutConstraint constraintWithItem:thumbView
+                                             attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:80]];
+            
+//            [self.contentView addConstraints:[NSLayoutConstraint
+//              constraintsWithVisualFormat:@"H:|-8-[thumbView]"
+//                                  options:0
+//                                  metrics:nil
+//                                    views:NSDictionaryOfVariableBindings(thumbView)]];
             [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[thumbView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(thumbView)]];
-            [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:thumbView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:thumbView attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
+            [self.contentView addConstraint:[
+         NSLayoutConstraint constraintWithItem:thumbView
+                                     attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:thumbView attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
         }
         self.thumbView = thumbView;
         
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        nameLabel.font = [UIFont boldSystemFontOfSize:17];
         [self.contentView addSubview:nameLabel];
+        {
+            [self.contentView addConstraints:[NSLayoutConstraint
+          constraintsWithVisualFormat:@"H:|-8-[thumbView]-8-[nameLabel]-8-|"
+                                              options:0
+                                              metrics:nil
+                                              views:NSDictionaryOfVariableBindings(thumbView, nameLabel)]];
+            [self.contentView addConstraints:[NSLayoutConstraint
+                                              constraintsWithVisualFormat:@"V:|-8-[nameLabel]"
+                                              options:0
+                                              metrics:nil
+                                              views:NSDictionaryOfVariableBindings(nameLabel)]];
+        }
+        self.nameLabel = nameLabel;
         
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        messageLabel.font = [UIFont systemFontOfSize:15];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textColor = [UIColor darkTextColor];
         [self.contentView addSubview:messageLabel];
+        {
+            [self.contentView addConstraints:[NSLayoutConstraint
+                                              constraintsWithVisualFormat:@"H:|-8-[thumbView]-8-[messageLabel]-8-|"
+                                              options:0
+                                              metrics:nil
+                                              views:NSDictionaryOfVariableBindings(thumbView, messageLabel)]];
+            [self.contentView addConstraints:[NSLayoutConstraint
+                          constraintsWithVisualFormat:@"V:[nameLabel]-8-[messageLabel]"
+                                              options:0
+                                              metrics:nil
+                                              views:NSDictionaryOfVariableBindings(nameLabel, messageLabel)]];
+        }
+        self.messageLabel = messageLabel;
         
         
         
