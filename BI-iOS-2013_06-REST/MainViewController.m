@@ -54,7 +54,7 @@
 
 - (void)addButtonAction:(id)sender
 {
-    NSAssert(false, @"lol fail & lame");
+//    NSAssert(false, @"lol fail & lame");
     Feed *feed = [[Feed alloc] init];
     feed.name = @"jakub hladi";
     feed.message = [[NSDate date] description];

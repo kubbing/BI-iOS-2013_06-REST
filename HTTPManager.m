@@ -128,18 +128,18 @@ constructingBodyWithBlock:block
                                                                   parameters:parameters];
     request.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     __block NSURLSessionDataTask *task = [_imageManager dataTaskWithRequest:request
-                                                          completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
-                                                              if (error) {
-                                                                  failure(error);
-                                                              } else {
-                                                                  NSAssert(![NSThread currentThread].isMainThread, @"this must be executed on background thread");
-                                                                  UIImage *image = process(responseObject);
-                                                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                                                      NSAssert([NSThread currentThread].isMainThread, @"this must be executed on main thread");
-                                                                      success((NSHTTPURLResponse *)task.response, image);
-                                                                  });
-                                                              }
-                                                          }];
+      completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+          if (error) {
+              failure(error);
+          } else {
+              NSAssert(![NSThread currentThread].isMainThread, @"this must be executed on background thread");
+              UIImage *image = process(responseObject);
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  NSAssert([NSThread currentThread].isMainThread, @"this must be executed on main thread");
+                  success((NSHTTPURLResponse *)task.response, image);
+              });
+          }
+      }];
     
     [task resume];
 }

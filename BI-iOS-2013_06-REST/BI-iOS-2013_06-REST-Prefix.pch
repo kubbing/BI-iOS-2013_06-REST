@@ -19,3 +19,4 @@
 #import "UIImage+roundImage.h"
 
 #define kBaseURLString @"http://restofka.hippotaps.com"
+    //#define kBaseURLString @"http://localhost:3000"
