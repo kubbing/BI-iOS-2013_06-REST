@@ -8,14 +8,13 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "APIWrapper.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     TRC_ENTRY;
-    
-//    🍻
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -26,6 +25,17 @@
     self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
+    
+    
+    [APIWrapper createAccountWithNickname:@"vysklenej iPhone"
+                                  success:^{
+                                      
+                                  } failure:^{
+                                      ;
+                                  }];
+    
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
     return YES;
 }
 
@@ -55,5 +65,37 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Notifications
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    TRC_ENTRY;
+    if (!deviceToken) {
+        return;
+    }
+    
+    NSString *string1 = [deviceToken description];
+    NSString *string2 = [string1 stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    NSString *string3 = [string2 stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [APIWrapper saveToken:string3 success:^{
+        ;
+    } failure:^{
+        ;
+   }];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    TRC_ERR(@"%@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    TRC_OBJ(userInfo);
+}
+
+
 
 @end

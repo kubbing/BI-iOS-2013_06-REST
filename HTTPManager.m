@@ -81,6 +81,22 @@
               }];
 }
 
+- (NSURLSessionDataTask *)PUT:(NSString *)URLString
+                   parameters:(NSDictionary *)parameters
+                      success:(void (^)(NSURLSessionDataTask *, id))success
+                      failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
+{
+    return [super PUT:URLString
+           parameters:parameters
+              success:^(NSURLSessionDataTask *task, id responseObject){
+                  TRC_LOG(@"%d, %@ %@", ((NSHTTPURLResponse *)task.response).statusCode, task.originalRequest.HTTPMethod, task.originalRequest.URL)
+                  success(task, responseObject);
+              } failure:^(NSURLSessionDataTask *task, NSError *error){
+                  TRC_LOG(@"%d, %@ %@", ((NSHTTPURLResponse *)task.response).statusCode, task.originalRequest.HTTPMethod, task.originalRequest.URL)
+                  failure(task, error);
+              }];
+}
+
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSURLSessionDataTask *, id))success

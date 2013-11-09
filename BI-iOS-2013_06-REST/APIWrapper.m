@@ -97,4 +97,62 @@
                                         }];
 }
 
++ (void)createAccountWithNickname:(NSString *)nickname success:(void (^)())success failure:(void (^)())failure
+{
+    NSParameterAssert(success);
+    NSParameterAssert(failure);
+    
+    NSNumber *accountId = [[NSUserDefaults standardUserDefaults] objectForKey:@"accountId"];
+    if (accountId) {
+        TRC_LOG(@"account exists, id: %@", accountId);
+        success();
+        return;
+    }
+    
+    [[HTTPManager sharedManager] POST:@"accounts.json"
+                           parameters:@{ @"account" : @{ @"login" : @"awesome_login", @"nick" : nickname }}
+                              success:^(NSURLSessionDataTask *task, id responseObject) {
+                                  NSDictionary *dictionary = [responseObject isKindOfClass:[NSDictionary class]]? (NSDictionary *)responseObject : nil;
+                                  if (!dictionary) {
+                                      failure();
+                                  }
+                                  
+                                  NSNumber *accountId = dictionary[@"id"];
+                                  [[NSUserDefaults standardUserDefaults] setObject:accountId forKey:@"accountId"];
+                                  [[NSUserDefaults standardUserDefaults] synchronize];
+                                  
+
+                                  
+                                  success();
+                              } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                  ;
+                              }];
+}
+
++ (void)saveToken:(NSString *)token success:(void (^)())success failure:(void (^)())failure
+{
+    NSParameterAssert(success);
+    NSParameterAssert(failure);
+    
+    NSNumber *accountId = [[NSUserDefaults standardUserDefaults] objectForKey:@"accountId"];
+    if (!accountId) {
+        double delayInSeconds = 5.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self saveToken:token success:success failure:failure];
+        });
+        return;
+    }
+    
+    [[HTTPManager sharedManager] PUT:[NSString stringWithFormat:@"accounts/%@.json", [accountId description]]
+                          parameters:@{ @"account" : @{ @"token" : token }}
+                             success:^(NSURLSessionDataTask *task, id responseObject) {
+                                 
+                                 
+                                 success();
+                             } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                 ;
+                             }];
+}
+
 @end

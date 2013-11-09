@@ -27,7 +27,7 @@
 {
     self = [super init];
     if (self) {
-        self.name = object[@"author"];
+        self.name = object[@"account"][@"nick"];
         self.message = object[@"message"];
         self.imageThumbnailPath = object[@"image"][@"image"][@"thumb_retina"][@"url"];
     }
