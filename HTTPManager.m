@@ -53,7 +53,7 @@
         /*
          druhy sessionManader ktery umi deserializovat obrazky
          */
-        NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
+        NSURL *url = [NSURL URLWithString:kBaseURLString];
         _imageManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
         _imageManager.requestSerializer = [AFHTTPRequestSerializer serializer];
         _imageManager.responseSerializer = [AFImageResponseSerializer serializer];
@@ -129,6 +129,9 @@ constructingBodyWithBlock:block
     request.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     __block NSURLSessionDataTask *task = [_imageManager dataTaskWithRequest:request
       completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+          
+          TRC_LOG(@"%d, %@ %@", ((NSHTTPURLResponse *)task.response).statusCode, task.originalRequest.HTTPMethod, task.originalRequest.URL)
+          
           if (error) {
               failure(error);
           } else {
