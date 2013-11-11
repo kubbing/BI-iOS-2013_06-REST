@@ -26,15 +26,23 @@
     
     [self.window makeKeyAndVisible];
     
+    /*
+     Appearance
+     */
     
-    [APIWrapper createAccountWithNickname:@"vysklenej iPhone"
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    
+    
+    [APIWrapper createAccountWithNickname:@"ja jsem cvicici"
                                   success:^{
                                       
                                   } failure:^{
                                       ;
                                   }];
     
-            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     
     return YES;
 }

@@ -10,6 +10,8 @@
 #import "APIWrapper.h"
 #import "Feed.h"
 #import "FeedCell.h"
+#import "NewFeedViewController.h"
+#import "GalleryViewController.h"
 
 @interface MainViewController ()
 
@@ -55,6 +57,7 @@
 - (void)addButtonAction:(id)sender
 {
 //    NSAssert(false, @"lol fail & lame");
+    /*
     Feed *feed = [[Feed alloc] init];
     feed.name = @"jakub hladi";
     feed.message = [[NSDate date] description];
@@ -63,7 +66,12 @@
         ;
     } failure:^{
         ;
-    }];
+    }];*/
+    
+    NewFeedViewController *controller = [[NewFeedViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)refreshControlAction:(UIRefreshControl *)refreshControl
@@ -119,6 +127,16 @@
 
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Feed *feed = self.dataArray[indexPath.row];
+    
+    GalleryViewController *galleryVC = [[GalleryViewController alloc] initWithNibName:nil bundle:nil];
+    galleryVC.feed = feed;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:galleryVC];
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
 /*

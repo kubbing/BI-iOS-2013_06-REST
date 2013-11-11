@@ -25,6 +25,8 @@
 		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
 		1794C89818202D8200A226B7 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89718202D8200A226B7 /* FeedCell.m */; };
 		1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89A1820652800A226B7 /* UIImage+roundImage.m */; };
+		17A9FE1D1830D0D8009A1AD3 /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A9FE1C1830D0D8009A1AD3 /* NewFeedViewController.m */; };
+		17A9FE201830DC00009A1AD3 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A9FE1F1830DC00009A1AD3 /* GalleryViewController.m */; };
 		D788662354F1410B9D968855 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E128277C40444272944E9310 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,10 @@
 		1794C89718202D8200A226B7 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
 		1794C8991820652800A226B7 /* UIImage+roundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+roundImage.h"; sourceTree = "<group>"; };
 		1794C89A1820652800A226B7 /* UIImage+roundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+roundImage.m"; sourceTree = "<group>"; };
+		17A9FE1B1830D0D8009A1AD3 /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewFeedViewController.h; path = ../NewFeedViewController.h; sourceTree = "<group>"; };
+		17A9FE1C1830D0D8009A1AD3 /* NewFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewFeedViewController.m; path = ../NewFeedViewController.m; sourceTree = "<group>"; };
+		17A9FE1E1830DC00009A1AD3 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		17A9FE1F1830DC00009A1AD3 /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
 		2D9922B3195444D88E529C28 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E128277C40444272944E9310 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,6 +138,8 @@
 		1794C86018201BBC00A226B7 /* BI-iOS-2013_06-REST */ = {
 			isa = PBXGroup;
 			children = (
+				17A9FE1B1830D0D8009A1AD3 /* NewFeedViewController.h */,
+				17A9FE1C1830D0D8009A1AD3 /* NewFeedViewController.m */,
 				1794C893182028D300A226B7 /* HTTPManager.h */,
 				1794C894182028D300A226B7 /* HTTPManager.m */,
 				1794C86918201BBC00A226B7 /* AppDelegate.h */,
@@ -148,6 +156,8 @@
 				1794C89718202D8200A226B7 /* FeedCell.m */,
 				1794C8991820652800A226B7 /* UIImage+roundImage.h */,
 				1794C89A1820652800A226B7 /* UIImage+roundImage.m */,
+				17A9FE1E1830DC00009A1AD3 /* GalleryViewController.h */,
+				17A9FE1F1830DC00009A1AD3 /* GalleryViewController.m */,
 			);
 			path = "BI-iOS-2013_06-REST";
 			sourceTree = "<group>";
@@ -313,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1794C86B18201BBC00A226B7 /* AppDelegate.m in Sources */,
+				17A9FE1D1830D0D8009A1AD3 /* NewFeedViewController.m in Sources */,
 				1794C88F182024E200A226B7 /* Feed.m in Sources */,
 				1794C89818202D8200A226B7 /* FeedCell.m in Sources */,
 				1794C88C1820243200A226B7 /* MainViewController.m in Sources */,
@@ -320,6 +331,7 @@
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
+				17A9FE201830DC00009A1AD3 /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +456,7 @@
 				GCC_PREFIX_HEADER = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Prefix.pch";
 				INFOPLIST_FILE = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0279D4C3-611A-410E-9AC6-F5B07E68A367";
+				PROVISIONING_PROFILE = "21A64B39-3F3C-4CA4-BF42-11AE8B63FA3F";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -461,7 +473,7 @@
 				GCC_PREFIX_HEADER = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Prefix.pch";
 				INFOPLIST_FILE = "BI-iOS-2013_06-REST/BI-iOS-2013_06-REST-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0279D4C3-611A-410E-9AC6-F5B07E68A367";
+				PROVISIONING_PROFILE = "21A64B39-3F3C-4CA4-BF42-11AE8B63FA3F";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

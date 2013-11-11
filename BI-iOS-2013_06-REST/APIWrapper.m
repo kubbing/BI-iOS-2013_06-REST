@@ -97,6 +97,19 @@
                                         }];
 }
 
++ (void)imageAtPath:(NSString *)path Success:(void (^)(UIImage *))success failure:(void (^)())failure
+{
+    [[HTTPManager sharedManager] getImageAtPath:path
+                                     parameters:nil
+                                        process:^UIImage *(UIImage *image) {
+                                            return image;
+                                        } success:^(NSHTTPURLResponse *response, id responseObject) {
+                                            success(responseObject);
+                                        } failure:^(NSError *error) {
+                                            TRC_ENTRY;
+                                        }];
+}
+
 + (void)createAccountWithNickname:(NSString *)nickname success:(void (^)())success failure:(void (^)())failure
 {
     NSParameterAssert(success);
@@ -109,8 +122,12 @@
         return;
     }
     
+    NSDictionary *params = @{ @"account" :
+                                  @{ @"login" : @"novy_login",
+                                     @"nick" : nickname }};
+    
     [[HTTPManager sharedManager] POST:@"accounts.json"
-                           parameters:@{ @"account" : @{ @"login" : @"awesome_login", @"nick" : nickname }}
+                           parameters:params
                               success:^(NSURLSessionDataTask *task, id responseObject) {
                                   NSDictionary *dictionary = [responseObject isKindOfClass:[NSDictionary class]]? (NSDictionary *)responseObject : nil;
                                   if (!dictionary) {

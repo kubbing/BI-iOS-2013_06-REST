@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *imageThumbnailPath;
+@property (nonatomic, strong) NSString *imageGalleryPath;
 
 - (instancetype)initWithJSONObject:(id)object;
 - (id)JSONObject;

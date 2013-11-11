@@ -23,6 +23,19 @@
     }
 }
 
+- (NSString *)imageGalleryPath
+{
+    if ((NSNull *)_imageGalleryPath == [NSNull null]) {
+        return nil;
+    }
+    else {
+        /*
+         TODO: vysledna URL by se mela konstruovat jinde nez tady
+         */
+        return [NSString stringWithFormat:@"%@%@", kBaseURLString, _imageGalleryPath];
+    }
+}
+
 - (instancetype)initWithJSONObject:(id)object
 {
     self = [super init];
@@ -30,6 +43,7 @@
         self.name = object[@"account"][@"nick"];
         self.message = object[@"message"];
         self.imageThumbnailPath = object[@"image"][@"image"][@"thumb_retina"][@"url"];
+        self.imageGalleryPath = object[@"image"][@"image"][@"gallery_retina"][@"url"];
     }
     return self;
 }
