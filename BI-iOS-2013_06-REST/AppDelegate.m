@@ -26,8 +26,13 @@
     
     [self.window makeKeyAndVisible];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] } ];
     
-    [APIWrapper createAccountWithNickname:@"vysklenej iPhone"
+    
+    
+    [APIWrapper createAccountWithNickname:@"kuba kuba kuba"
                                   success:^{
                                       
                                   } failure:^{

@@ -10,6 +10,8 @@
 #import "APIWrapper.h"
 #import "Feed.h"
 #import "FeedCell.h"
+#import "NewFeedViewController.h"
+#import "GalleryViewController.h"
 
 @interface MainViewController ()
 
@@ -55,13 +57,20 @@
 - (void)addButtonAction:(id)sender
 {
 //    NSAssert(false, @"lol fail & lame");
-    Feed *feed = [[Feed alloc] init];
-    feed.name = @"jakub hladi";
-    feed.message = [[NSDate date] description];
-    feed.image = [UIImage imageNamed:@"birth_of_venus"];
-    [APIWrapper postFeed:feed Success:^(NSArray *feeds) {
-        ;
-    } failure:^{
+//    Feed *feed = [[Feed alloc] init];
+//    feed.name = @"jakub hladi";
+//    feed.message = [[NSDate date] description];
+//    feed.image = [UIImage imageNamed:@"birth_of_venus"];
+//    [APIWrapper postFeed:feed Success:^(NSArray *feeds) {
+//        ;
+//    } failure:^{
+//        ;
+//    }];
+    
+    NewFeedViewController *controller = [[NewFeedViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self.navigationController presentViewController:navController animated:YES completion:^{
         ;
     }];
 }
@@ -119,6 +128,19 @@
 
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Feed *feed = self.dataArray[indexPath.row];
+    
+    GalleryViewController* galleryVC = [[GalleryViewController alloc] init];
+    galleryVC.feed = feed;
+    galleryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:galleryVC];
+    [self presentViewController:navController animated:YES completion:nil];
+    
 }
 
 /*
