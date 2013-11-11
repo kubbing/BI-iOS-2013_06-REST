@@ -25,14 +25,14 @@
 
 - (NSString *)imageGalleryPath
 {
-    if ((NSNull *)_imageThumbnailPath == [NSNull null]) {
+    if ((NSNull *)_imageGalleryPath == [NSNull null]) {
         return nil;
     }
     else {
         /*
          TODO: vysledna URL by se mela konstruovat jinde nez tady
          */
-        return [NSString stringWithFormat:@"%@%@", kBaseURLString, _imageThumbnailPath];
+        return [NSString stringWithFormat:@"%@%@", kBaseURLString, _imageGalleryPath];
     }
 }
 
@@ -52,8 +52,6 @@
 {
     return @{ @"feed" : @{ @"author" : self.name,
                            @"message" : self.message }};
-//    return @{ @"author" : self.name,
-//              @"message" : self.message };
 }
 
 - (NSString *)description

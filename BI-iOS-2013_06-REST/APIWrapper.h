@@ -20,7 +20,7 @@
 
 + (void)imageAtPath:(NSString *)path Success:(void (^)(UIImage *image))success failure:(void (^)())failure;
 
-+ (void)createAccountWithNickname:(NSString *)nickname success:(void (^)())success failure:(void (^)())failure;;
++ (void)createAccountWithNickname:(NSString *)nickname login:(NSString *)login success:(void (^)())success failure:(void (^)())failure;;
 
 + (void)saveToken:(NSString *)token success:(void (^)())success failure:(void (^)())failure;;
 

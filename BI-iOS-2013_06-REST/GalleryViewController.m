@@ -37,7 +37,6 @@
     UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     scrollView.minimumZoomScale = 0.5;
     scrollView.maximumZoomScale = 2.0;
-//    scrollView.zooming = YES;
     scrollView.delegate = self;
     [self.view addSubview:scrollView];
     _scrollView = scrollView;

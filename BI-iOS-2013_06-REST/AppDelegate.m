@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "FeedViewController.h"
 #import "APIWrapper.h"
 
 @implementation AppDelegate
@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    MainViewController *mainController = [[MainViewController alloc] initWithStyle:UITableViewStylePlain];
+    FeedViewController *mainController = [[FeedViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
     self.window.rootViewController = navController;
     
@@ -31,12 +31,15 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] } ];
     
     
-    
-    [APIWrapper createAccountWithNickname:@"kuba kuba kuba"
+//    NSAssert(false, @"tady si zmente vas login a nickname");
+    NSString *login = @"kubbing";
+    NSString *nick = @"jakub hladik, 🔥⌘🔥";
+    [APIWrapper createAccountWithNickname:nick
+                                    login:login
                                   success:^{
-                                      
+                                      TRC_OBJ(@"account created #lol");
                                   } failure:^{
-                                      ;
+                                      NSAssert(false, @"#lol #fail");
                                   }];
     
             [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];

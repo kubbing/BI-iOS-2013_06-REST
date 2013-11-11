@@ -19,7 +19,7 @@
 		1794C87618201BBC00A226B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85E18201BBC00A226B7 /* UIKit.framework */; };
 		1794C87E18201BBC00A226B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1794C87C18201BBC00A226B7 /* InfoPlist.strings */; };
 		1794C88018201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C87F18201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m */; };
-		1794C88C1820243200A226B7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C88B1820243200A226B7 /* MainViewController.m */; };
+		1794C88C1820243200A226B7 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C88B1820243200A226B7 /* FeedViewController.m */; };
 		1794C88F182024E200A226B7 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C88E182024E200A226B7 /* Feed.m */; };
 		1794C8921820255800A226B7 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C8911820255800A226B7 /* APIWrapper.m */; };
 		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
@@ -58,8 +58,8 @@
 		1794C87D18201BBC00A226B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1794C87F18201BBC00A226B7 /* BI_iOS_2013_06_RESTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BI_iOS_2013_06_RESTTests.m; sourceTree = "<group>"; };
 		1794C8891820226800A226B7 /* HPTCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPTCommon.h; sourceTree = "<group>"; };
-		1794C88A1820243200A226B7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		1794C88B1820243200A226B7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1794C88A1820243200A226B7 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		1794C88B1820243200A226B7 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		1794C88D182024E200A226B7 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		1794C88E182024E200A226B7 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		1794C8901820255800A226B7 /* APIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIWrapper.h; sourceTree = "<group>"; };
@@ -138,26 +138,16 @@
 		1794C86018201BBC00A226B7 /* BI-iOS-2013_06-REST */ = {
 			isa = PBXGroup;
 			children = (
-				1794C893182028D300A226B7 /* HTTPManager.h */,
-				1794C894182028D300A226B7 /* HTTPManager.m */,
+				17A9FE261830EEFA009A1AD3 /* Extension */,
+				17A9FE251830EED7009A1AD3 /* Service */,
+				17A9FE241830EED2009A1AD3 /* Network */,
+				17A9FE231830EECE009A1AD3 /* Controller */,
+				17A9FE221830EEC9009A1AD3 /* View */,
+				17A9FE211830EEC5009A1AD3 /* Model */,
 				1794C86918201BBC00A226B7 /* AppDelegate.h */,
 				1794C86A18201BBC00A226B7 /* AppDelegate.m */,
 				1794C86C18201BBC00A226B7 /* Images.xcassets */,
 				1794C86118201BBC00A226B7 /* Supporting Files */,
-				1794C88A1820243200A226B7 /* MainViewController.h */,
-				1794C88B1820243200A226B7 /* MainViewController.m */,
-				1794C88D182024E200A226B7 /* Feed.h */,
-				1794C88E182024E200A226B7 /* Feed.m */,
-				1794C8901820255800A226B7 /* APIWrapper.h */,
-				1794C8911820255800A226B7 /* APIWrapper.m */,
-				1794C89618202D8200A226B7 /* FeedCell.h */,
-				1794C89718202D8200A226B7 /* FeedCell.m */,
-				1794C8991820652800A226B7 /* UIImage+roundImage.h */,
-				1794C89A1820652800A226B7 /* UIImage+roundImage.m */,
-				17FE6D7C1830BA3F0037082E /* NewFeedViewController.h */,
-				17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */,
-				17FE6D7F1830C23C0037082E /* GalleryViewController.h */,
-				17FE6D801830C23C0037082E /* GalleryViewController.m */,
 			);
 			path = "BI-iOS-2013_06-REST";
 			sourceTree = "<group>";
@@ -190,6 +180,65 @@
 				1794C87C18201BBC00A226B7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17A9FE211830EEC5009A1AD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1794C88D182024E200A226B7 /* Feed.h */,
+				1794C88E182024E200A226B7 /* Feed.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17A9FE221830EEC9009A1AD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1794C89618202D8200A226B7 /* FeedCell.h */,
+				1794C89718202D8200A226B7 /* FeedCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17A9FE231830EECE009A1AD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1794C88A1820243200A226B7 /* FeedViewController.h */,
+				1794C88B1820243200A226B7 /* FeedViewController.m */,
+				17FE6D7C1830BA3F0037082E /* NewFeedViewController.h */,
+				17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */,
+				17FE6D7F1830C23C0037082E /* GalleryViewController.h */,
+				17FE6D801830C23C0037082E /* GalleryViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17A9FE241830EED2009A1AD3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1794C893182028D300A226B7 /* HTTPManager.h */,
+				1794C894182028D300A226B7 /* HTTPManager.m */,
+				1794C8901820255800A226B7 /* APIWrapper.h */,
+				1794C8911820255800A226B7 /* APIWrapper.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		17A9FE251830EED7009A1AD3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		17A9FE261830EEFA009A1AD3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1794C8991820652800A226B7 /* UIImage+roundImage.h */,
+				1794C89A1820652800A226B7 /* UIImage+roundImage.m */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,7 +375,7 @@
 				17FE6D7E1830BA3F0037082E /* NewFeedViewController.m in Sources */,
 				1794C88F182024E200A226B7 /* Feed.m in Sources */,
 				1794C89818202D8200A226B7 /* FeedCell.m in Sources */,
-				1794C88C1820243200A226B7 /* MainViewController.m in Sources */,
+				1794C88C1820243200A226B7 /* FeedViewController.m in Sources */,
 				1794C895182028D300A226B7 /* HTTPManager.m in Sources */,
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,

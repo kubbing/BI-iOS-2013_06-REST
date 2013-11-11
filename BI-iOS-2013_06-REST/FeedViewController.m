@@ -6,20 +6,35 @@
 //  Copyright (c) 2013 Flowknight s.r.o. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "FeedViewController.h"
 #import "APIWrapper.h"
 #import "Feed.h"
 #import "FeedCell.h"
 #import "NewFeedViewController.h"
 #import "GalleryViewController.h"
 
-@interface MainViewController ()
+@interface FeedViewController ()
 
 @property (strong, nonatomic) NSArray *dataArray;
+@property (readonly) UIImage *placeholderImage;
 
 @end
 
-@implementation MainViewController
+@implementation FeedViewController
+
+@synthesize placeholderImage = _placeholderImage;
+
+- (UIImage *)placeholderImage
+{
+    if (!_placeholderImage) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            _placeholderImage = [[UIImage imageNamed:@"placeholder"] roundImage];
+        });
+    }
+    
+    return _placeholderImage;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -116,7 +131,7 @@
     cell.nameLabel.text = feed.name;
     cell.messageLabel.text = feed.message;
     
-    cell.thumbView.image = [UIImage imageNamed:@"placeholder"];
+    cell.thumbView.image = self.placeholderImage;
     if (feed.imageThumbnailPath) {
         [APIWrapper feedThumbnailAtPath:feed.imageThumbnailPath Success:^(UIImage *image) {
             cell.thumbView.image = image;

@@ -110,9 +110,7 @@
                                         }];
 }
 
-+ (void)createAccountWithNickname:(NSString *)nickname
-                          success:(void (^)())success
-                          failure:(void (^)())failure
++ (void)createAccountWithNickname:(NSString *)nickname login:(NSString *)login success:(void (^)())success failure:(void (^)())failure
 {
     NSParameterAssert(success);
     NSParameterAssert(failure);
@@ -125,7 +123,7 @@
     }
     
     NSDictionary *params = @{ @"account" :
-                                  @{ @"login" : @"awesome_login_1",
+                                  @{ @"login" : login,
                                      @"nick" : nickname }};
     
     [[HTTPManager sharedManager] POST:@"accounts.json"
