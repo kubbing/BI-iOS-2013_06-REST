@@ -37,12 +37,11 @@
     [APIWrapper createAccountWithNickname:nick
                                     login:login
                                   success:^{
-                                      TRC_OBJ(@"account created #lol");
                                   } failure:^{
                                       NSAssert(false, @"#lol #fail");
                                   }];
     
-            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     
     return YES;
 }

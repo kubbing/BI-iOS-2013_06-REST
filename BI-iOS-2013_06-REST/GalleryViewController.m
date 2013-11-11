@@ -10,7 +10,9 @@
 #import "APIWrapper.h"
 
 @interface GalleryViewController ()
+
 @property (nonatomic,weak) UIScrollView* scrollView;
+@property (nonatomic,weak) UIImageView* imageView;
 
 @end
 
@@ -31,27 +33,54 @@
 	// Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
     
-    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
-    scrollView.minimumZoomScale = 0.5;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+    scrollView.minimumZoomScale = 1.0;
     scrollView.maximumZoomScale = 2.0;
     scrollView.delegate = self;
     [self.view addSubview:scrollView];
-    _scrollView = scrollView;
+    {
+        scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
+    }
+    self.scrollView = scrollView;
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:_scrollView.bounds];
     imageView.tag = 1;
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [_scrollView addSubview:imageView];
+    imageView.contentMode = UIViewContentModeCenter;
+    [self.scrollView addSubview:imageView];
+    {
+        imageView.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
+//        [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
+        [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.scrollView
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+        [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.scrollView
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                   multiplier:1.0
+                                                                     constant:0.0]];
+    }
+    self.imageView = imageView;
     
-    [APIWrapper imageAtPath:self.feed.imageGalleryPath Success:^(UIImage *image) {
-        imageView.image = image;
-    } failure:^{
-        ;
-    }];
-    
+    DEFINE_BLOCK_SELF;
+    [APIWrapper imageAtPath:self.feed.imageGalleryPath
+                    Success:^(UIImage *image) {
+                        blockSelf.imageView.image = image;
+                    } failure:^{
+                        ;
+                    }];
 }
 
 - (void)didReceiveMemoryWarning
