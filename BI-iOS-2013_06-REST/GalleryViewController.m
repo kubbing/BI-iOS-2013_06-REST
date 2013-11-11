@@ -37,40 +37,26 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     scrollView.minimumZoomScale = 1.0;
     scrollView.maximumZoomScale = 2.0;
     scrollView.delegate = self;
     [self.view addSubview:scrollView];
     {
-        scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
+//        scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(scrollView)]];
     }
     self.scrollView = scrollView;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:_scrollView.bounds];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.tag = 1;
-    imageView.contentMode = UIViewContentModeCenter;
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.scrollView addSubview:imageView];
     {
-        imageView.translatesAutoresizingMaskIntoConstraints = NO;
-//        [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
-//        [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
-        [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.scrollView
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
-        [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.scrollView
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1.0
-                                                                     constant:0.0]];
+
     }
     self.imageView = imageView;
     
