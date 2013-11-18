@@ -25,6 +25,7 @@
 		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
 		1794C89818202D8200A226B7 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89718202D8200A226B7 /* FeedCell.m */; };
 		1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89A1820652800A226B7 /* UIImage+roundImage.m */; };
+		17E89FFB1839F17D00BA44CA /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E89FFA1839F17D00BA44CA /* DataService.m */; };
 		17FE6D7E1830BA3F0037082E /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */; };
 		17FE6D811830C23C0037082E /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FE6D801830C23C0037082E /* GalleryViewController.m */; };
 		D788662354F1410B9D968855 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E128277C40444272944E9310 /* libPods.a */; };
@@ -70,6 +71,8 @@
 		1794C89718202D8200A226B7 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
 		1794C8991820652800A226B7 /* UIImage+roundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+roundImage.h"; sourceTree = "<group>"; };
 		1794C89A1820652800A226B7 /* UIImage+roundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+roundImage.m"; sourceTree = "<group>"; };
+		17E89FF91839F17D00BA44CA /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		17E89FFA1839F17D00BA44CA /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		17FE6D7C1830BA3F0037082E /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedViewController.h; sourceTree = "<group>"; };
 		17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedViewController.m; sourceTree = "<group>"; };
 		17FE6D7F1830C23C0037082E /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 		17A9FE251830EED7009A1AD3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				17E89FF91839F17D00BA44CA /* DataService.h */,
+				17E89FFA1839F17D00BA44CA /* DataService.m */,
 			);
 			name = Service;
 			path = ..;
@@ -380,6 +385,7 @@
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
+				17E89FFB1839F17D00BA44CA /* DataService.m in Sources */,
 				17FE6D811830C23C0037082E /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

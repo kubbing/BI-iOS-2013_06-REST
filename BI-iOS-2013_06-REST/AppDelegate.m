@@ -31,7 +31,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] } ];
     
     
-    NSAssert(false, @"tady si zmente vas login a nickname");
+//    NSAssert(false, @"tady si zmente vas login a nickname");
     NSString *login = @"kubbing";
     NSString *nick = @"jakub hladik, 🔥⌘🔥";
     [APIWrapper createAccountWithNickname:nick
