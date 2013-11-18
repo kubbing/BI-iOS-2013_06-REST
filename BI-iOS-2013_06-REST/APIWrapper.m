@@ -140,17 +140,16 @@
                                   [[NSUserDefaults standardUserDefaults] setObject:accountId forKey:@"accountId"];
                                   [[NSUserDefaults standardUserDefaults] synchronize];
                                   
-                                  
-              {
-                  NSNumber *accountId = dictionary[@"id"];
-                  NSString *login = dictionary[@"login"];
-                  NSString *nick = dictionary[@"nick"];
+                  {
+                      NSNumber *accountId = dictionary[@"id"];
+                      NSString *login = dictionary[@"login"];
+                      NSString *nick = dictionary[@"nick"];
+
+                      [[DataService sharedService] createAccountWithId:accountId login:login nick:nick];
                   
-                  [[DataService sharedService] createAccountWithId:accountId login:login nick:nick];
-                  
-                  TRC_LOG(@"%@", [[DataService sharedService] accountList]);
-              }
-                                  
+                      TRC_OBJ([[DataService sharedService] accountArray]);
+                  }
+                               
 
                                   
                                   success();

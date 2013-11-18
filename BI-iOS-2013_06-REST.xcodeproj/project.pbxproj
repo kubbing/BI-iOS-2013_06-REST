@@ -25,10 +25,10 @@
 		1794C895182028D300A226B7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C894182028D300A226B7 /* HTTPManager.m */; };
 		1794C89818202D8200A226B7 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89718202D8200A226B7 /* FeedCell.m */; };
 		1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1794C89A1820652800A226B7 /* UIImage+roundImage.m */; };
-		17E89FFB1839F17D00BA44CA /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E89FFA1839F17D00BA44CA /* DataService.m */; };
-		17E8A08C1839F4EA00BA44CA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A08A1839F4EA00BA44CA /* Model.xcdatamodeld */; };
-		17E8A08F1839F63200BA44CA /* DataAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A08E1839F63200BA44CA /* DataAccount.m */; };
-		17E8A0921839F6D400BA44CA /* DataAccount+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A0911839F6D400BA44CA /* DataAccount+ext.m */; };
+		17E8A095183A09A300BA44CA /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A094183A09A300BA44CA /* DataService.m */; };
+		17E8A098183A0AEA00BA44CA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A096183A0AEA00BA44CA /* Model.xcdatamodeld */; };
+		17E8A09B183A0DDF00BA44CA /* DataAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A09A183A0DDF00BA44CA /* DataAccount.m */; };
+		17E8A09E183A0E5000BA44CA /* DataAccount+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E8A09D183A0E5000BA44CA /* DataAccount+ext.m */; };
 		17FE6D7E1830BA3F0037082E /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */; };
 		17FE6D811830C23C0037082E /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FE6D801830C23C0037082E /* GalleryViewController.m */; };
 		D788662354F1410B9D968855 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E128277C40444272944E9310 /* libPods.a */; };
@@ -74,13 +74,14 @@
 		1794C89718202D8200A226B7 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
 		1794C8991820652800A226B7 /* UIImage+roundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+roundImage.h"; sourceTree = "<group>"; };
 		1794C89A1820652800A226B7 /* UIImage+roundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+roundImage.m"; sourceTree = "<group>"; };
-		17E89FF91839F17D00BA44CA /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
-		17E89FFA1839F17D00BA44CA /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
-		17E8A08B1839F4EA00BA44CA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		17E8A08D1839F63200BA44CA /* DataAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccount.h; sourceTree = "<group>"; };
-		17E8A08E1839F63200BA44CA /* DataAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccount.m; sourceTree = "<group>"; };
-		17E8A0901839F6D400BA44CA /* DataAccount+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccount+ext.h"; sourceTree = "<group>"; };
-		17E8A0911839F6D400BA44CA /* DataAccount+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccount+ext.m"; sourceTree = "<group>"; };
+		17E8A093183A09A300BA44CA /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		17E8A094183A09A300BA44CA /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		17E8A097183A0AEA00BA44CA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		17E8A099183A0DDF00BA44CA /* DataAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccount.h; sourceTree = "<group>"; };
+		17E8A09A183A0DDF00BA44CA /* DataAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccount.m; sourceTree = "<group>"; };
+		17E8A09C183A0E5000BA44CA /* DataAccount+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccount+ext.h"; sourceTree = "<group>"; };
+		17E8A09D183A0E5000BA44CA /* DataAccount+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccount+ext.m"; sourceTree = "<group>"; };
+		17E8A09F183A13E400BA44CA /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		17FE6D7C1830BA3F0037082E /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedViewController.h; sourceTree = "<group>"; };
 		17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedViewController.m; sourceTree = "<group>"; };
 		17FE6D7F1830C23C0037082E /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
@@ -196,13 +197,13 @@
 		17A9FE211830EEC5009A1AD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				17E8A08A1839F4EA00BA44CA /* Model.xcdatamodeld */,
-				17E8A08D1839F63200BA44CA /* DataAccount.h */,
-				17E8A08E1839F63200BA44CA /* DataAccount.m */,
 				1794C88D182024E200A226B7 /* Feed.h */,
 				1794C88E182024E200A226B7 /* Feed.m */,
-				17E8A0901839F6D400BA44CA /* DataAccount+ext.h */,
-				17E8A0911839F6D400BA44CA /* DataAccount+ext.m */,
+				17E8A096183A0AEA00BA44CA /* Model.xcdatamodeld */,
+				17E8A099183A0DDF00BA44CA /* DataAccount.h */,
+				17E8A09A183A0DDF00BA44CA /* DataAccount.m */,
+				17E8A09C183A0E5000BA44CA /* DataAccount+ext.h */,
+				17E8A09D183A0E5000BA44CA /* DataAccount+ext.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,8 +244,8 @@
 		17A9FE251830EED7009A1AD3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				17E89FF91839F17D00BA44CA /* DataService.h */,
-				17E89FFA1839F17D00BA44CA /* DataService.m */,
+				17E8A093183A09A300BA44CA /* DataService.h */,
+				17E8A094183A09A300BA44CA /* DataService.m */,
 			);
 			name = Service;
 			path = ..;
@@ -390,9 +391,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1794C86B18201BBC00A226B7 /* AppDelegate.m in Sources */,
-				17E8A0921839F6D400BA44CA /* DataAccount+ext.m in Sources */,
+				17E8A09E183A0E5000BA44CA /* DataAccount+ext.m in Sources */,
 				17FE6D7E1830BA3F0037082E /* NewFeedViewController.m in Sources */,
-				17E8A08F1839F63200BA44CA /* DataAccount.m in Sources */,
+				17E8A09B183A0DDF00BA44CA /* DataAccount.m in Sources */,
 				1794C88F182024E200A226B7 /* Feed.m in Sources */,
 				1794C89818202D8200A226B7 /* FeedCell.m in Sources */,
 				1794C88C1820243200A226B7 /* FeedViewController.m in Sources */,
@@ -400,9 +401,9 @@
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
-				17E89FFB1839F17D00BA44CA /* DataService.m in Sources */,
+				17E8A095183A09A300BA44CA /* DataService.m in Sources */,
 				17FE6D811830C23C0037082E /* GalleryViewController.m in Sources */,
-				17E8A08C1839F4EA00BA44CA /* Model.xcdatamodeld in Sources */,
+				17E8A098183A0AEA00BA44CA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,12 +626,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17E8A08A1839F4EA00BA44CA /* Model.xcdatamodeld */ = {
+		17E8A096183A0AEA00BA44CA /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				17E8A08B1839F4EA00BA44CA /* Model.xcdatamodel */,
+				17E8A09F183A13E400BA44CA /* Model 2.xcdatamodel */,
+				17E8A097183A0AEA00BA44CA /* Model.xcdatamodel */,
 			);
-			currentVersion = 17E8A08B1839F4EA00BA44CA /* Model.xcdatamodel */;
+			currentVersion = 17E8A097183A0AEA00BA44CA /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

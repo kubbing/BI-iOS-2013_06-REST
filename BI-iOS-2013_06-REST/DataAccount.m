@@ -12,8 +12,8 @@
 @implementation DataAccount
 
 @dynamic accountId;
-@dynamic login;
 @dynamic nick;
-@dynamic token;
+@dynamic login;
+@dynamic feeds;
 
 @end

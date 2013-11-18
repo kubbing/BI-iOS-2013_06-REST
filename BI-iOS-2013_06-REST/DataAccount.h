@@ -13,8 +13,8 @@
 @interface DataAccount : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * accountId;
-@property (nonatomic, retain) NSString * login;
 @property (nonatomic, retain) NSString * nick;
-@property (nonatomic, retain) NSString * token;
+@property (nonatomic, retain) NSString * login;
+@property (nonatomic, retain) NSManagedObject *feeds;
 
 @end

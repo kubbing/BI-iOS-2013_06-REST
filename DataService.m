@@ -13,10 +13,6 @@
 
 @implementation DataService
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
 + (DataService *)sharedService
 {
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
@@ -24,45 +20,38 @@
     });
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.managedObjectContext;
-    }
-    return self;
-}
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 #pragma mark - Actions
 
 - (void)createAccountWithId:(NSNumber *)accountId login:(NSString *)login nick:(NSString *)nick
 {
+        // @"DataAccount"
     NSString *entityString = [[DataAccount class] description];
-    DataAccount *account = [NSEntityDescription insertNewObjectForEntityForName:entityString inManagedObjectContext:self.managedObjectContext];
+    DataAccount *acc = [NSEntityDescription insertNewObjectForEntityForName:entityString inManagedObjectContext:self.managedObjectContext];
     
-    account.accountId = accountId;
-    account.login = login;
-    account.nick = nick;
+    acc.accountId = accountId;
+    acc.login = login;
+    acc.nick = nick;
     
     [self saveContext];
 }
 
-- (NSArray *)accountList
+- (NSArray *)accountArray
 {
     NSString *entityString = [[DataAccount class] description];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
     
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"accountId" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    [request setSortDescriptors:@[ sd ]];
+    
 //    [request setPredicate:[NSPredicate predicateWithFormat:@"accountId < 10"]];
     
-//    [request setPropertiesToFetch:@[]];
-    
-//    [request setSortDescriptors:[NSSortDescriptor sortDescriptorWithKey:@"nick" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-
     [request setFetchLimit:100];
-    [request setFetchOffset:0];
-    [request setFetchBatchSize:10];
-    
-    
+//    [request setFetchOffset:10];
+    [request setFetchBatchSize:20];
     
     NSError *error;
     NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];

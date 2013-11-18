@@ -21,6 +21,6 @@
 
 - (void)createAccountWithId:(NSNumber *)accountId login:(NSString *)login nick:(NSString *)nick;
 
-- (NSArray *)accountList;
+- (NSArray *)accountArray;
 
 @end

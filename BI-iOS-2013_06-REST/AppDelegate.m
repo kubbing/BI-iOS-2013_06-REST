@@ -42,9 +42,9 @@
                                       NSAssert(false, @"#lol #fail");
                                   }];
     
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     
-    [DataService sharedService];
+    [DataService sharedService].managedObjectContext;
     
     return YES;
 }
