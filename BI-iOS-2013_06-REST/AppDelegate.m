@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FeedViewController.h"
 #import "APIWrapper.h"
+#import "DataService.h"
 
 @implementation AppDelegate
 
@@ -32,8 +33,8 @@
     
     
 //    NSAssert(false, @"tady si zmente vas login a nickname");
-    NSString *login = @"kubbing";
-    NSString *nick = @"jakub hladik, 🔥⌘🔥";
+    NSString *login = @"kubb";
+    NSString *nick = @"jakub hladik";
     [APIWrapper createAccountWithNickname:nick
                                     login:login
                                   success:^{
@@ -42,6 +43,8 @@
                                   }];
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
+    [DataService sharedService];
     
     return YES;
 }

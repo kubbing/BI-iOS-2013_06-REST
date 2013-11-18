@@ -9,6 +9,8 @@
 #import "APIWrapper.h"
 #import "Feed.h"
 #import "HTTPManager.h"
+#import "DataAccount+ext.h"
+#import "DataService.h"
 
 @implementation APIWrapper
 
@@ -137,6 +139,17 @@
                                   NSNumber *accountId = dictionary[@"id"];
                                   [[NSUserDefaults standardUserDefaults] setObject:accountId forKey:@"accountId"];
                                   [[NSUserDefaults standardUserDefaults] synchronize];
+                                  
+                                  
+              {
+                  NSNumber *accountId = dictionary[@"id"];
+                  NSString *login = dictionary[@"login"];
+                  NSString *nick = dictionary[@"nick"];
+                  
+                  [[DataService sharedService] createAccountWithId:accountId login:login nick:nick];
+                  
+                  TRC_LOG(@"%@", [[DataService sharedService] accountList]);
+              }
                                   
 
                                   

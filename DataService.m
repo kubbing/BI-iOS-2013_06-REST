@@ -7,6 +7,7 @@
 //
 
 #import "DataService.h"
+#import "DataAccount+ext.h"
 
 @import CoreData;
 
@@ -21,6 +22,56 @@
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];
     });
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.managedObjectContext;
+    }
+    return self;
+}
+
+#pragma mark - Actions
+
+- (void)createAccountWithId:(NSNumber *)accountId login:(NSString *)login nick:(NSString *)nick
+{
+    NSString *entityString = [[DataAccount class] description];
+    DataAccount *account = [NSEntityDescription insertNewObjectForEntityForName:entityString inManagedObjectContext:self.managedObjectContext];
+    
+    account.accountId = accountId;
+    account.login = login;
+    account.nick = nick;
+    
+    [self saveContext];
+}
+
+- (NSArray *)accountList
+{
+    NSString *entityString = [[DataAccount class] description];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
+    
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"accountId < 10"]];
+    
+//    [request setPropertiesToFetch:@[]];
+    
+//    [request setSortDescriptors:[NSSortDescriptor sortDescriptorWithKey:@"nick" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+
+    [request setFetchLimit:100];
+    [request setFetchOffset:0];
+    [request setFetchBatchSize:10];
+    
+    
+    
+    NSError *error;
+    NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        TRC_ERR(@"%@", error);
+        return @[];
+    }
+    
+    return fetchedArray;
 }
 
 - (void)saveContext
@@ -62,7 +113,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"coredata_test_2" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

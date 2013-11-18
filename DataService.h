@@ -19,4 +19,8 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (void)createAccountWithId:(NSNumber *)accountId login:(NSString *)login nick:(NSString *)nick;
+
+- (NSArray *)accountList;
+
 @end
