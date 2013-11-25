@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1742F54718432A8200BBF2F1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742F54618432A8200BBF2F1 /* MapViewController.m */; };
 		1794C85B18201BBC00A226B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85A18201BBC00A226B7 /* Foundation.framework */; };
 		1794C85D18201BBC00A226B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85C18201BBC00A226B7 /* CoreGraphics.framework */; };
 		1794C85F18201BBC00A226B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85E18201BBC00A226B7 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1742F54518432A8200BBF2F1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		1742F54618432A8200BBF2F1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		1794C85718201BBC00A226B7 /* BI-iOS-2013_06-REST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BI-iOS-2013_06-REST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1794C85A18201BBC00A226B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1794C85C18201BBC00A226B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,7 +84,7 @@
 		17E8A09A183A0DDF00BA44CA /* DataAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccount.m; sourceTree = "<group>"; };
 		17E8A09C183A0E5000BA44CA /* DataAccount+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataAccount+ext.h"; sourceTree = "<group>"; };
 		17E8A09D183A0E5000BA44CA /* DataAccount+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataAccount+ext.m"; sourceTree = "<group>"; };
-		17E8A09F183A13E400BA44CA /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		17E8A09F183A13E400BA44CA /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		17FE6D7C1830BA3F0037082E /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedViewController.h; sourceTree = "<group>"; };
 		17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedViewController.m; sourceTree = "<group>"; };
 		17FE6D7F1830C23C0037082E /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				17FE6D7D1830BA3F0037082E /* NewFeedViewController.m */,
 				17FE6D7F1830C23C0037082E /* GalleryViewController.h */,
 				17FE6D801830C23C0037082E /* GalleryViewController.m */,
+				1742F54518432A8200BBF2F1 /* MapViewController.h */,
+				1742F54618432A8200BBF2F1 /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
 				17E8A095183A09A300BA44CA /* DataService.m in Sources */,
+				1742F54718432A8200BBF2F1 /* MapViewController.m in Sources */,
 				17FE6D811830C23C0037082E /* GalleryViewController.m in Sources */,
 				17E8A098183A0AEA00BA44CA /* Model.xcdatamodeld in Sources */,
 			);
@@ -521,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D9922B3195444D88E529C28 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jakub Hladik (2S6A8YCBVP)";
@@ -538,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D9922B3195444D88E529C28 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jakub Hladik (2S6A8YCBVP)";

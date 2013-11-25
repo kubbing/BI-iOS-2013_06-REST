@@ -42,8 +42,8 @@
     if (self) {
         self.name = object[@"account"][@"nick"];
         self.message = object[@"message"];
-        self.imageThumbnailPath = object[@"image"][@"image"][@"thumb_retina"][@"url"];
-        self.imageGalleryPath = object[@"image"][@"image"][@"gallery_retina"][@"url"];
+        self.imageThumbnailPath = object[@"image"][@"image"][@"thumb_160"][@"url"];
+        self.imageGalleryPath = object[@"image"][@"image"][@"gallery_960"][@"url"];
     }
     return self;
 }
