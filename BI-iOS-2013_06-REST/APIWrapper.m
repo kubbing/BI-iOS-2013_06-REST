@@ -125,8 +125,7 @@
     }
     
     NSDictionary *params = @{ @"account" :
-                                  @{ @"login" : login,
-                                     @"nick" : nickname }};
+                                  @{ @"login" : login }};
     
     [[HTTPManager sharedManager] POST:@"accounts.json"
                            parameters:params
