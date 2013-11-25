@@ -143,7 +143,7 @@
                   {
                       NSNumber *accountId = dictionary[@"id"];
                       NSString *login = dictionary[@"login"];
-                      NSString *nick = dictionary[@"nick"];
+                      NSString *nick = dictionary[@"profile"][@"nick"];
 
                       [[DataService sharedService] createAccountWithId:accountId login:login nick:nick];
                   
