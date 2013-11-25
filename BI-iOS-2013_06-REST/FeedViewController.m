@@ -12,6 +12,7 @@
 #import "FeedCell.h"
 #import "NewFeedViewController.h"
 #import "GalleryViewController.h"
+#import "MapViewController.h"
 
 @interface FeedViewController ()
 
@@ -52,6 +53,8 @@
     self.title = @"Restofka";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonAction:)];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(mapButtonAction:)];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[FeedCell class] forCellReuseIdentifier:@"Cell"];
     
@@ -68,6 +71,14 @@
 }
 
 #pragma mark - Actions
+
+- (void)mapButtonAction:(id)sender
+{
+    MapViewController *mainController = [[MapViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
+    navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+}
 
 - (void)addButtonAction:(id)sender
 {
