@@ -14,6 +14,8 @@
 
 + (void)feedsSuccess:(void (^)(NSArray *feeds))success failure:(void (^)())failure;
 
++ (void)profilesSuccess:(void (^)(NSArray *feeds))success failure:(void (^)())failure;
+
 + (void)postFeed:(Feed *)feed Success:(void (^)())success failure:(void (^)())failure;
 
 + (void)feedThumbnailAtPath:(NSString *)path Success:(void (^)(UIImage *image))success failure:(void (^)())failure;

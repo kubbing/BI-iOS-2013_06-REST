@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController
+@import MapKit;
+
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @end

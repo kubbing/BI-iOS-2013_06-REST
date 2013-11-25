@@ -11,6 +11,7 @@
 #import "HTTPManager.h"
 #import "DataAccount+ext.h"
 #import "DataService.h"
+#import "Profile.h"
 
 @implementation APIWrapper
 
@@ -38,16 +39,32 @@
                              } failure:^(NSURLSessionDataTask *task, NSError *error) {
                                  ;
                              }];
+}
+
++ (void)profilesSuccess:(void (^)(NSArray *))success failure:(void (^)())failure
+{
+    NSParameterAssert(success);
+    NSParameterAssert(failure);
     
-//    Feed *feed = [[Feed alloc] init];
-//    feed.name = @"Jakub Hladik";
-//    feed.message = @"uci iOS…";
-//    
-//    double delayInSeconds = 2.0;
-//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        success(@[feed]);
-//    });
+    [[HTTPManager sharedManager] GET:@"profiles.json"
+                          parameters:nil
+                             success:^(NSURLSessionDataTask *task, id responseObject) {
+                                 NSArray *array = [responseObject isKindOfClass:[NSArray class]]? (NSArray *)responseObject : nil;
+                                 if (!array) {
+                                     failure();
+                                 }
+                                 
+                                 NSMutableArray *profileArray = [NSMutableArray array];
+                                 for (id object in array) {
+                                     [profileArray addObject:[[Profile alloc] initWithJSONObject:object]];
+                                 }
+                                 
+                                     // ulozit do databaze...
+                                 
+                                 success(profileArray);
+                             } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                 ;
+                             }];
 }
 
 + (void)postFeed:(Feed *)feed Success:(void (^)())success failure:(void (^)())failure
