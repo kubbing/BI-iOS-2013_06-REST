@@ -12,6 +12,7 @@
 @interface BookViewController ()
 
 @property (readonly) NSOperationQueue *queue;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -43,8 +44,17 @@
 {
     [super viewDidLoad];
 
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
     BookOperation *bo1 = [[BookOperation alloc] init];
-//    [bo1 start];
+    
+    [bo1 addObserver:self forKeyPath:@"contactArray" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:NULL];
+    __weak BookOperation *blockOperation = bo1;
+    bo1.onFinish = ^{
+        TRC_ENTRY;
+        [blockOperation removeObserver:self forKeyPath:@"contactArray"];
+    };
+    
     [self.queue addOperation:bo1];
 }
 
@@ -54,20 +64,52 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSNumber *kind = (NSNumber *)change[NSKeyValueChangeKindKey];
+        switch (kind.integerValue) {
+            case NSKeyValueChangeSetting:
+            {
+                NSArray *newArray = change[NSKeyValueChangeNewKey];
+                self.dataArray = [newArray mutableCopy];
+                [self.tableView reloadData];
+                break;
+            }
+            case NSKeyValueChangeInsertion:
+            {
+                NSArray *new = change[NSKeyValueChangeNewKey];
+                NSIndexSet *indexes = change[NSKeyValueChangeIndexesKey];
+                
+                [self.dataArray insertObject:new.firstObject atIndex:indexes.firstIndex];
+                [self.tableView beginUpdates];
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexes.firstIndex inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
+                [self.tableView endUpdates];
+                
+                break;
+            }
+            default:
+                break;
+        }
+    });
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,6 +117,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    cell.textLabel.text = [self.dataArray[indexPath.row] valueForKey:@"firstName"];
     // Configure the cell...
     
     return cell;

@@ -1,5 +1,5 @@
 //
-//  BookOperation.h
+//  Contact.h
 //  BI-iOS-2013_06-REST
 //
 //  Created by Jakub Hladík on 02.12.13.
@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookOperation : NSOperation
+@interface Contact : NSObject
 
-@property (strong, nonatomic) NSMutableArray *contactArray;
-
-@property (copy, nonatomic) void (^onFinish)();
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *lastName;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1707DC1D184C7B2600324417 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1707DC1C184C7B2600324417 /* BookViewController.m */; };
 		1707DC20184C7BC400324417 /* BookOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1707DC1F184C7BC400324417 /* BookOperation.m */; };
+		1717555C184C812500938BF8 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1717555B184C812500938BF8 /* Contact.m */; };
 		1742F5521843445B00BBF2F1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742F5511843445A00BBF2F1 /* MapViewController.m */; };
 		1794C85B18201BBC00A226B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85A18201BBC00A226B7 /* Foundation.framework */; };
 		1794C85D18201BBC00A226B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1794C85C18201BBC00A226B7 /* CoreGraphics.framework */; };
@@ -54,6 +55,8 @@
 		1707DC1C184C7B2600324417 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		1707DC1E184C7BC400324417 /* BookOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookOperation.h; sourceTree = "<group>"; };
 		1707DC1F184C7BC400324417 /* BookOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookOperation.m; sourceTree = "<group>"; };
+		1717555A184C812500938BF8 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		1717555B184C812500938BF8 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		1742F5501843445A00BBF2F1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		1742F5511843445A00BBF2F1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		1742F553184346E000BBF2F1 /* Prague.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Prague.gpx; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				17F9690218434B800001DBD8 /* Profile.m */,
 				1707DC1E184C7BC400324417 /* BookOperation.h */,
 				1707DC1F184C7BC400324417 /* BookOperation.m */,
+				1717555A184C812500938BF8 /* Contact.h */,
+				1717555B184C812500938BF8 /* Contact.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				1707DC1D184C7B2600324417 /* BookViewController.m in Sources */,
 				1794C895182028D300A226B7 /* HTTPManager.m in Sources */,
 				1707DC20184C7BC400324417 /* BookOperation.m in Sources */,
+				1717555C184C812500938BF8 /* Contact.m in Sources */,
 				1794C86718201BBC00A226B7 /* main.m in Sources */,
 				1794C89B1820652800A226B7 /* UIImage+roundImage.m in Sources */,
 				1794C8921820255800A226B7 /* APIWrapper.m in Sources */,
