@@ -10,6 +10,7 @@
 #import "FeedViewController.h"
 #import "APIWrapper.h"
 #import "DataService.h"
+#import "BookViewController.h"
 
 @implementation AppDelegate
 
@@ -23,7 +24,14 @@
     
     FeedViewController *mainController = [[FeedViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
-    self.window.rootViewController = navController;
+    
+    BookViewController *bookController = [[BookViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *bookNavController = [[UINavigationController alloc] initWithRootViewController:bookController];
+    
+    UITabBarController *tabController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
+    tabController.viewControllers = @[ navController, bookNavController ];
+    
+    self.window.rootViewController = tabController;
     
     [self.window makeKeyAndVisible];
     
